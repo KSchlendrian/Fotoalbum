@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(rgba(176, 207, 0, 0.438), rgba(255, 0, 55, 0.562));
+  background-color: rgba(240, 240, 181, 0.767);
+  margin: 100px auto 100px auto;
+  width: 860px;
+  height: 100vh;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.image {
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  max-width: 200px;
+  border-radius: 10px;
+}
+
+.btns {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+button {
+  margin-top: 30px;
+  width: 100px;
+  height: 30px;
+  border-radius: 5px;
+  border: none;
+  background-color: rgba(1, 185, 1, 0.288);
+}
