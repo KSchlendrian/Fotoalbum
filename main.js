@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  showImagesForPage(0, 8);
+  showImagesForPage(0, 18);
 
   const draggableElement = document.querySelectorAll('.drag');
   draggableElement.forEach((draggableElement) => {
@@ -59,24 +59,19 @@ document.addEventListener('DOMContentLoaded', function () {
 function onDrop(event) {
   event.preventDefault();
   const data = event.dataTransfer.getData('text/plain');
-  const newParagraph = document.createElement('p');
   const droppedElement = document.getElementById(data);
-  const dropTarget = event.target;
+  const dropTarget = event.target.closest('.drop-target.counter');
+  const existingImage = dropTarget.querySelector('.image');
 
-  newParagraph.textContent = data;
-  event.target.appendChild(newParagraph);
-
-  if (droppedElement) {
+  if (droppedElement && dropTarget && !existingImage) {
     const newImage = document.createElement('img');
     newImage.src = droppedElement.src;
     newImage.alt = droppedElement.alt;
     newImage.classList.add('image');
 
-    const currentImage = dropTarget.querySelector('.image');
-    if (currentImage) {
-      dropTarget.removeChild(currentImage);
-    }
-
     dropTarget.appendChild(newImage);
+
+    const gallery = document.getElementById('gallery');
+    gallery.removeChild(droppedElement);
   }
 }
