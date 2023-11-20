@@ -6,7 +6,6 @@
 
 body {
   background: linear-gradient(rgba(176, 207, 0, 0.438), rgba(255, 0, 55, 0.562));
-  background-color: rgba(240, 240, 181, 0.767);
   margin: 100px auto 100px auto;
   width: 860px;
   height: 100vh;
@@ -38,4 +37,10 @@ button {
   border-radius: 5px;
   border: none;
   background-color: rgba(1, 185, 1, 0.288);
+}
+
+#drop-target {
+  width: 100px;
+  height: 100px;
+  background-color: #fff;
 }
