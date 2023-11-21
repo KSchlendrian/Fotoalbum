@@ -7,8 +7,9 @@
 body {
   background: linear-gradient(rgba(176, 207, 0, 0.438), rgba(255, 0, 55, 0.562));
   margin: 100px auto 100px auto;
-  width: 100%;
+  width: 40%;
   height: 100vh;
+  overflow: hidden;
 }
 
 .gallery {
@@ -44,9 +45,27 @@ button {
   width: 100px;
   height: 100px;
   background-color: #fff;
+  border-radius: 10px;
 }
 
 .drop-zones {
   display: flex;
   gap: 20px;
+}
+
+.counter-group {
+  counter-reset: section;
+}
+
+.counter-group div {
+  counter-increment: section;
+  position: relative;
+}
+
+.counter-group div::before {
+  content: 'Seite ' counter(section);
+  display: block;
+  position: absolute;
+  top: -25px;
+  left: 25px;
 }

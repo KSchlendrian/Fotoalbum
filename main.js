@@ -60,7 +60,7 @@ function onDrop(event) {
   event.preventDefault();
   const data = event.dataTransfer.getData('text/plain');
   const droppedElement = document.getElementById(data);
-  const dropTarget = event.target.closest('.drop-target.counter');
+  const dropTarget = event.target.closest('.drop-target');
   const existingImage = dropTarget.querySelector('.image');
 
   if (droppedElement && dropTarget && !existingImage) {
